@@ -48,5 +48,5 @@ while true; do
         do_connect
     fi
 
-    sleep 20
+    sleep 30
 done

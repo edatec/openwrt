@@ -1,0 +1,48 @@
+sha256 = package/ed-cm4ind_v1.0-1_aarch64_cortex-a72.ipk
+Package: ed-cm4ind
+Version: v1.0-1
+Depends: libc
+Source: package/edatec/ed-cm4ind
+SourceName: ed-cm4ind
+Section: utils
+SourceDateEpoch: 1681873424
+Maintainer: EDATEC <rxie@edatec.cn>
+Architecture: aarch64_cortex-a72
+Installed-Size: 3716
+Filename: package/ed-cm4ind_v1.0-1_aarch64_cortex-a72.ipk
+Size: 4577
+SHA256sum: dc3bba369a280ffab27077fbaabfacfea0d1de301388f6eb772aa89f09ff45ae   package/ed-cm4ind_v1.0-1_aarch64_cortex-a72.ipk
+Description:  EDATEC CM4 Industrial BSP, support RS485 RS232 CAN and ADC.
+
+sha256 = package/ed-cm4sen_v1.0-1_aarch64_cortex-a72.ipk
+Package: ed-cm4sen
+Version: v1.0-1
+Depends: libc, kmod-i2c-bcm2835
+Source: package/edatec/ed-cm4sen
+SourceName: ed-cm4sen
+Section: utils
+SourceDateEpoch: 1681873424
+Maintainer: EDATEC <rxie@edatec.cn>
+Architecture: aarch64_cortex-a72
+Installed-Size: 3906
+Filename: package/ed-cm4sen_v1.0-1_aarch64_cortex-a72.ipk
+Size: 4838
+SHA256sum: 385b1136ff86a8387c1cfcd904fed937d29bb5e8d45d7fc0a93f46545d52cf01   package/ed-cm4sen_v1.0-1_aarch64_cortex-a72.ipk
+Description:  EDATEC CM4 Sensing BSP, support RS485 RS232 and CAN.
+
+sha256 = package/ed-qmi_v1.0-1_aarch64_cortex-a72.ipk
+Package: ed-qmi
+Version: v1.0-1
+Depends: libc, usb-modeswitch, kmod-mii, kmod-usb-net, kmod-usb-wdm, kmod-usb-net-qmi-wwan, uqmi, kmod-usb-serial-option, kmod-usb-serial, kmod-usb-serial-wwan
+Source: package/edatec/ed-qmi
+SourceName: ed-qmi
+Section: utils
+SourceDateEpoch: 1681873424
+Maintainer: EDATEC <rxie@edatec.cn>
+Architecture: aarch64_cortex-a72
+Installed-Size: 55061
+Filename: package/ed-qmi_v1.0-1_aarch64_cortex-a72.ipk
+Size: 55926
+SHA256sum: 3d0d3066920807c2b33ed295664d3ab1b585a12b0bcbedfb9d78f2cfea19f923   package/ed-qmi_v1.0-1_aarch64_cortex-a72.ipk
+Description:  EDATEC CM4 LTE tools.
+

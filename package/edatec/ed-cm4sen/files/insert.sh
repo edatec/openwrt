@@ -5,6 +5,8 @@ CONFIG_FILE=/boot/config.txt
 
 echo "Modifying config.txt..."
 
+grep -q otg_mode=1 $CONFIG_FILE || \
+        echo -e otg_mode=1 >> $CONFIG_FILE
 grep -q enable_uart=1 $CONFIG_FILE || \
         echo -e enable_uart=1 >> $CONFIG_FILE
 grep -q dtoverlay=ed-sdhost $CONFIG_FILE || \

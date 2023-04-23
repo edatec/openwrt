@@ -17,14 +17,14 @@ define Package/$(PKG_NAME)
   TITLE:=EDATEC CM4 LTE BSP
   MAINTAINER:=EDATEC <rxie@edatec.cn>
   DEPENDS:= +usb-modeswitch\
-  +kmod-mii\
-  +kmod-usb-net\
-  +kmod-usb-wdm\
-  +kmod-usb-net-qmi-wwan\
-  +uqmi\
-  +kmod-usb-serial-option\
-  +kmod-usb-serial\
-  +kmod-usb-serial-wwan
+ +kmod-mii\
+ +kmod-usb-net\
+ +kmod-usb-wdm\
+ +kmod-usb-net-qmi-wwan\
+ +uqmi\
+ +kmod-usb-serial-option\
+ +kmod-usb-serial\
+ +kmod-usb-serial-wwan
 endef
 
 define Package/$(PKG_NAME)/description
@@ -38,21 +38,24 @@ define Build/Compile
 endef
 
 define Package/$(PKG_NAME)/postinst
-#!/bin/sh
+# #!/bin/sh
 
-echo "Installing LTE BSP..."
-mkdir -p /usr/share/ed-qmi
-cp -f /tmp/$(PKG_NAME)/quectel-CM /usr/share/ed-qmi/
-cp -f /tmp/$(PKG_NAME)/lte-reconnect.sh /usr/share/ed-qmi/
-cp -f /tmp/$(PKG_NAME)/lte /etc/init.d/
+# echo "Installing LTE BSP..."
+# mkdir -p /usr/share/ed-qmi
+# cp -f /tmp/$(PKG_NAME)/quectel-CM /usr/share/ed-qmi/
+# cp -f /tmp/$(PKG_NAME)/lte-reconnect.sh /usr/share/ed-qmi/
+# cp -f /tmp/$(PKG_NAME)/lte /etc/init.d/
 
 endef
 
 define Package/$(PKG_NAME)/install
-	$(INSTALL_DIR) $(1)/tmp/$(PKG_NAME)
-	$(INSTALL_BIN) ./files/quectel-CM  $(1)/tmp/$(PKG_NAME)
-	$(INSTALL_BIN) ./files/lte  $(1)/tmp/$(PKG_NAME)
-	$(INSTALL_BIN) ./files/lte-reconnect.sh  $(1)/tmp/$(PKG_NAME)
+
+	$(INSTALL_DIR) $(1)/usr/share/$(PKG_NAME)
+	$(INSTALL_BIN) ./files/quectel-CM  $(1)/usr/share/$(PKG_NAME)
+	$(INSTALL_BIN) ./files/lte-reconnect.sh $(1)/usr/share/$(PKG_NAME)
+	# $(INSTALL_DIR) $(1)/etc/init.d
+	# $(INSTALL_BIN) ./files/lte  $(1)/etc/init.d/
+
 endef
 
 define Package/$(PKG_NAME)/prerm
@@ -60,8 +63,8 @@ define Package/$(PKG_NAME)/prerm
 
 service lte disable
 
-if [ -e "/usr/share/ed-lte" ];then
-	rm -rf /usr/share/ed-lte/
+if [ -e "/usr/share/ed-qmi" ];then
+	rm -rf /usr/share/ed-qmi/
 fi
 
 if [ -e "/etc/inid.d/lte" ];then
