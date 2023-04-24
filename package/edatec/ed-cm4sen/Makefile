@@ -16,7 +16,7 @@ define Package/$(PKG_NAME)
   CATEGORY:=BSP
   TITLE:=EDATEC CM4 Sensing BSP
   MAINTAINER:=EDATEC <rxie@edatec.cn>
-  DEPENDS+= +kmod-i2c-bcm2835
+
 endef
 
 define Package/$(PKG_NAME)/description
@@ -30,22 +30,22 @@ define Build/Compile
 endef
 
 define Package/$(PKG_NAME)/postinst
-# #!/bin/sh
+#!/bin/sh
 
-# echo "Installing dtbo..."
-# if [ ! -e "/boot/overlays/ed-mcp2515-spi1-can0.dtbo" ];then
-# 	cp /tmp/$(PKG_NAME)/ed-mcp2515-spi1-can0.dtbo /boot/overlays/
-# fi
+echo "Installing dtbo..."
+if [ ! -e "/boot/overlays/ed-mcp2515-spi1-can0.dtbo" ];then
+	cp /tmp/$(PKG_NAME)/ed-mcp2515-spi1-can0.dtbo /boot/overlays/
+fi
 
-# if [ ! -e "/boot/overlays/ed-sdhost.dtbo" ];then
-# 	cp /tmp/$(PKG_NAME)/ed-sdhost.dtbo /boot/overlays/
-# fi
+if [ ! -e "/boot/overlays/ed-sdhost.dtbo" ];then
+	cp /tmp/$(PKG_NAME)/ed-sdhost.dtbo /boot/overlays/
+fi
 
-# if [ ! -e "/boot/dt-blob.bin" ];then
-# 	cp /tmp/$(PKG_NAME)/dt-blob.bin /boot
-# fi
+if [ ! -e "/boot/dt-blob.bin" ];then
+	cp /tmp/$(PKG_NAME)/dt-blob.bin /boot
+fi
 
-# /tmp/$(PKG_NAME)/insert.sh
+/tmp/$(PKG_NAME)/insert.sh
 
 endef
 

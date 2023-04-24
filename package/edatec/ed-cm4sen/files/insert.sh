@@ -27,5 +27,9 @@ grep -q dtoverlay=uart5 $CONFIG_FILE || \
         echo -e dtoverlay=uart5 >> $CONFIG_FILE
 grep -q gpio=11=op,dl $CONFIG_FILE || \
         echo -e gpio=11=op,dl >> $CONFIG_FILE
-
-echo "End!"
+        
+echo "---------------------------------------------"
+echo
+echo "End! Please reboot to apply the changes!!!"
+echo
+echo "---------------------------------------------"

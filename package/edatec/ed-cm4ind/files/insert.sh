@@ -24,5 +24,8 @@ grep -q dtoverlay=uart5 $CONFIG_FILE || \
 grep -q gpio=6=ip,pu $CONFIG_FILE || \
         echo -e gpio=6=ip,pu >> $CONFIG_FILE
 
-
-echo "End!"
+echo "---------------------------------------------"
+echo
+echo "End! Please reboot to apply the changes!!!"
+echo
+echo "---------------------------------------------"
