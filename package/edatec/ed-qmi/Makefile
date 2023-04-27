@@ -7,7 +7,7 @@ include $(TOPDIR)/rules.mk
 
 PKG_NAME:=ed-qmi
 PKG_VERSION:=v1.0
-PKG_RELEASE:=1
+PKG_RELEASE:=2
 
 include $(INCLUDE_DIR)/package.mk
 
@@ -43,8 +43,9 @@ endef
 define Package/$(PKG_NAME)/postinst
 #!/bin/sh
 
-
 cp -f /tmp/$(PKG_NAME)/lte /etc/init.d/
+service lte enable
+service lte start
 
 endef
 

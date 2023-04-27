@@ -27,6 +27,8 @@ grep -q dtoverlay=uart5 $CONFIG_FILE || \
         echo -e dtoverlay=uart5 >> $CONFIG_FILE
 grep -q gpio=11=op,dl $CONFIG_FILE || \
         echo -e gpio=11=op,dl >> $CONFIG_FILE
+grep -q dtparam=ant2 $CONFIG_FILE || \
+        echo -e dtparam=ant2 >> $CONFIG_FILE
         
 echo "---------------------------------------------"
 echo
