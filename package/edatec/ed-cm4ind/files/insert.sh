@@ -5,6 +5,8 @@ CONFIG_FILE=/boot/config.txt
 
 echo "Modifying config.txt..."
 
+grep -q otg_mode=1 $CONFIG_FILE || \
+        echo -e otg_mode=1 >> $CONFIG_FILE
 grep -q dtoverlay=spi1-1cs,cs0_pin=16 $CONFIG_FILE || \
         echo -e dtoverlay=spi1-1cs,cs0_pin=16 >> $CONFIG_FILE
 grep -q dtoverlay=jedec-spi-nor,flash-spi1-0 $CONFIG_FILE || \

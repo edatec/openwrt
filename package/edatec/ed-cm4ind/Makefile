@@ -7,7 +7,7 @@ include $(TOPDIR)/rules.mk
 
 PKG_NAME:=ed-cm4ind
 PKG_VERSION:=v1.0
-PKG_RELEASE:=1
+PKG_RELEASE:=2
 
 include $(INCLUDE_DIR)/package.mk
 
@@ -19,7 +19,7 @@ define Package/$(PKG_NAME)
 endef
 
 define Package/$(PKG_NAME)/description
- EDATEC CM4 Industrial BSP, support RS485 RS232 CAN and ADC.
+ EDATEC CM4 Industrial BSP, support the second ethernet, RS485, RS232, CAN and ADC.
 endef
 
 TARGET_CFLAGS += -Wall
